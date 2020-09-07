@@ -33,3 +33,6 @@ entrepreneur.investment-round.form.error.tieneSolucitudes = Has Applications
 
 entrepreneur.investment-round.form.label.accounting-record = List accounting record
 
+entrepreneur.dormit.form.button.create-dormit = Create dormit
+entrepreneur.dormit.form.label.text = Request Dormit
+

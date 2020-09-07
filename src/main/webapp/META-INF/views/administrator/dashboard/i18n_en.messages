@@ -16,4 +16,8 @@ administrator.dashboard.form.label.averageInvestmentRoundsPerEntrepreneur = Aver
 administrator.dashboard.form.label.averageApplicationsPerEntrepreneur = Average number of Applications per Entrepreneur:
 administrator.dashboard.form.label.averageApplicationsPerInvestor = Average number of Applications per Investor:
 
+administrator.dashboard.form.label.ratioInvestmentRoundHaveDormit = The ratio of investment rounds that have dormit:
+administrator.dashboard.form.label.ratioApplicationIncludeLink = The ratio of applications that have link:
+administrator.dashboard.form.label.ratioApplicationIncludePassword = The ratio of applications that have password:
+
 administrator.dashboard.form.button.return = Return

@@ -29,9 +29,11 @@
     create table `application` (
        `id` integer not null,
         `version` integer not null,
+        `link_info` varchar(255),
         `moment` datetime(6),
         `money_offer_amount` double precision,
         `money_offer_currency` varchar(255),
+        `password` varchar(255),
         `rejection_justification` varchar(255),
         `statement` varchar(255),
         `status` integer,
@@ -138,6 +140,14 @@
         `author` varchar(255),
         `moment` datetime(6),
         `text` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `dormit` (
+       `id` integer not null,
+        `version` integer not null,
+        `text` varchar(255),
+        `investment_round_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -349,6 +359,9 @@ create index IDX2q2747fhp099wkn3j2yt05fhs on `application` (`status`);
     alter table `book_keeper_request` 
        add constraint UK_sljl5qffng42pku9vux2t2fp0 unique (`user_account_id`);
 
+    alter table `dormit` 
+       add constraint UK_ihdavcaylq6gt8mohxcw7iw5j unique (`investment_round_id`);
+
     alter table `investment_round` 
        add constraint UK_g31yqkckem05dgslpjk4my8t9 unique (`title`);
 
@@ -424,6 +437,11 @@ create index IDX2q2747fhp099wkn3j2yt05fhs on `application` (`status`);
        add constraint `FKt4r2xk2tub96vxanpfvkfitmc` 
        foreign key (`patron_id`) 
        references `patron` (`id`);
+
+    alter table `dormit` 
+       add constraint `FK67c3f7g9dv0sxvy5d2e7kt7au` 
+       foreign key (`investment_round_id`) 
+       references `investment_round` (`id`);
 
     alter table `entrepreneur` 
        add constraint FK_r6tqltqvrlh1cyy8rsj5pev1q 

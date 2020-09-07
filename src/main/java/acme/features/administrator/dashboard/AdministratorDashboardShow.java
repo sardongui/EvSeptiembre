@@ -36,7 +36,8 @@ public class AdministratorDashboardShow implements AbstractShowService<Administr
 		assert model != null;
 
 		request.unbind(entity, model, "numberNotices", "numberTechnologies", "numberTools", "minMoneyActiveInquiries", "maxMoneyActiveInquiries", "averageMoneyActiveInquiries", "stddevMoneyActiveInquiries", "minMoneyActiveOvertures",
-			"maxMoneyActiveOvertures", "averageMoneyActiveOvertures", "stddevMoneyActiveOvertures", "averageInvestmentRoundsPerEntrepreneur", "averageApplicationsPerEntrepreneur", "averageApplicationsPerInvestor");
+			"maxMoneyActiveOvertures", "averageMoneyActiveOvertures", "stddevMoneyActiveOvertures", "averageInvestmentRoundsPerEntrepreneur", "averageApplicationsPerEntrepreneur", "averageApplicationsPerInvestor",
+			"ratioInvestmentRoundHaveDormit", "ratioApplicationIncludeLink", "ratioApplicationIncludePassword");
 	}
 
 	@Override
@@ -91,6 +92,15 @@ public class AdministratorDashboardShow implements AbstractShowService<Administr
 		res.setAverageApplicationsPerEntrepreneur(avgAppEnt);
 		Double avgAppInv = this.repository.numberApplications() / this.repository.numberInvestors();
 		res.setAverageApplicationsPerInvestor(avgAppInv);
+		
+		//CCC
+		Double ratioInvestmentRoundHaveDormit = this.repository.ratioInvestmentRoundHaveDormit();
+		Double ratioApplicationIncludeLink = this.repository.ratioApplicationIncludeLink();
+		Double ratioApplicationIncludePassword = this.repository.ratioApplicationIncludePassword();
+		res.setRatioInvestmentRoundHaveDormit(ratioInvestmentRoundHaveDormit);
+		res.setRatioApplicationIncludeLink(ratioApplicationIncludeLink);
+		res.setRatioApplicationIncludePassword(ratioApplicationIncludePassword);
+
 		return res;
 	}
 

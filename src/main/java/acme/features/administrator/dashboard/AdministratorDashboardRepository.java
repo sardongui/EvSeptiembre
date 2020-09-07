@@ -59,4 +59,18 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 
 	@Query("select count(i) from Investor i")
 	Double numberInvestors();
+	
+	//CC
+	
+	// 1) The ratio of investment rounds that have request
+		@Query("select 1.0 * count(d) / (select count(investmentRound) from InvestmentRound investmentRound) from Dormit d")
+		Double ratioInvestmentRoundHaveDormit();
+
+	// 2) The ratio of applications that have Link
+		@Query("select 1.0 * count(a) / (select count(application) from Application application) from Application a where a.linkInfo!=null")
+		Double ratioApplicationIncludeLink();
+
+	//3) The ratio of applications that include a password-protected link.
+		@Query("select 1.0 * count(a) / (select count(aplication) from Application aplication) from Application a where a.password!=''")
+		Double ratioApplicationIncludePassword();
 }

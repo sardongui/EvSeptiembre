@@ -25,6 +25,9 @@
 	<acme:form-moment code="entrepreneur.application.form.label.moment" path="moment" readonly="true"/>
 	<acme:form-textbox code="entrepreneur.application.form.label.statement" path="statement" readonly="true"/>
 	<acme:form-money code="entrepreneur.application.form.label.moneyOffer" path="moneyOffer"/>
+	<acme:form-url code="entrepreneur.application.form.label.linkInfo" path="linkInfo"/>
+	<acme:form-textbox code="entrepreneur.application.form.label.password" path="password"/>
+	
 	
 		<acme:form-select code="entrepreneur.application.form.label.status" path="status">
 		<jstl:forEach var="status" items="<%=acme.entities.applications.ApplicationStatus.values()%>">

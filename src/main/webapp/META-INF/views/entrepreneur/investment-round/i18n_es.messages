@@ -32,3 +32,5 @@ entrepreneur.investment-round.form.error.tieneSolucitudes = Tiene Solicitudes
 
 entrepreneur.investment-round.form.label.accounting-record = Lista registros contables
 
+entrepreneur.dormit.form.button.create-dormit= Crear dormit
+entrepreneur.dormit.form.label.text = Solicitud dormit

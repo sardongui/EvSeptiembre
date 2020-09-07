@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.entities.applications.Application;
+import acme.entities.dormits.Dormit;
 import acme.entities.roles.Investor;
 import acme.framework.repositories.AbstractRepository;
 
@@ -30,4 +31,7 @@ public interface InvestorApplicationRepository extends AbstractRepository {
 
 	@Query("select count(a) from Application a where a.investmentRound.id = ?1 and a.investor.id = ?2")
 	int findApplicationsByInvestmentRoundId(int irId, int invId);
+	
+	@Query("select r from Dormit r where r.investmentRound.id = ?1")
+	Dormit findOneDormitIdByInvestmentRoundId(int investId);
 }

@@ -548,6 +548,7 @@
 		<property name="amountMoney" value="500€" />
 		<property name="link" value="" />
 		<property name="finalMode" value="true" />
+		
 		<property name="entrepreneur" ref="entrepreneur1Entrepreneur" />
 	</bean>
 
@@ -627,6 +628,8 @@
   		<property name="entrepreneur" ref="entrepreneur1Entrepreneur" /> 
   		<property name="investor" ref="investor1Investor" />
   		<property name="investmentRound" ref="investmentRound1" />
+  		<property name="linkInfo" value="http://www.acme.com"/>
+  		<property name="password" value="A1.sferfdtq"/>
   	</bean>
   	
   	<bean name="application3" class="acme.entities.applications.Application">
@@ -639,6 +642,8 @@
   		<property name="entrepreneur" ref="entrepreneur2Entrepreneur" /> 
   		<property name="investor" ref="investor2Investor" />
   		<property name="investmentRound" ref="investmentRound3" />
+  		<property name="linkInfo" value="http://www.acme.com"/>
+  		<property name="password" value="A1.s2fer?fdtq"/>
   	</bean>
 
 
@@ -947,6 +952,23 @@
 	<bean name="email20" class="acme.datatypes.Email">
 		<property name="displayName" value="" />
 		<property name="email" value="tech2@acme.com" />
+	</bean>
+	
+	<bean name="dormit1" class="acme.entities.dormits.Dormit">
+		<property name="text" value="Dormit 1"/>
+		<property name="investmentRound" ref="investmentRound1"/>
+	</bean>
+	<bean name="dormit2" class="acme.entities.dormits.Dormit">
+		<property name="text" value="Dormit 2"/>
+		<property name="investmentRound" ref="investmentRound2"/>
+	</bean>
+	<bean name="dormit3" class="acme.entities.dormits.Dormit">
+		<property name="text" value="Dormit 3"/>
+		<property name="investmentRound" ref="investmentRound3"/>
+	</bean>
+	<bean name="dormit4" class="acme.entities.dormits.Dormit">
+		<property name="text" value="Dormit 4"/>
+		<property name="investmentRound" ref="investmentRound4"/>
 	</bean>
 	
 </beans>

@@ -21,6 +21,7 @@ import acme.framework.services.AbstractUpdateService;
 @Service
 public class EntrepreneurInvestmentRoundUpdateService implements AbstractUpdateService<Entrepreneur, InvestmentRound> {
 
+	
 	@Autowired
 	EntrepreneurInvestmentRoundRepository repository;
 

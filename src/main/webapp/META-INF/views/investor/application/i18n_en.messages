@@ -5,6 +5,8 @@ investor.application.form.label.moneyOffer = Money Offer:
 investor.application.form.label.investmentRound = Investment Round:
 investor.application.form.button.return = Return
 
+investor.application.form.label.linkInfo = Link 
+investor.application.form.label.password = Password
 investor.application.form.label.status = Status
 investor.application.form.label.status.rejected = Rejected
 investor.application.form.label.status.accepted = Accepted

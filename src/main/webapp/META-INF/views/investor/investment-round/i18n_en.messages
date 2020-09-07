@@ -17,3 +17,5 @@ investor.investmentRound.list.label.kindRound = Kind round
 investor.investmentRound.list.label.title = Title
 
 investor.application.exist = This investment round is already apply
+
+investor.investmentRound.form.button.show-dormit = Show dormit

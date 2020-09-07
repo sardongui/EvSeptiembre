@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.applications.Application;
 import acme.entities.applications.ApplicationStatus;
+import acme.entities.dormits.Dormit;
 import acme.entities.investmentRounds.InvestmentRound;
 import acme.entities.roles.Entrepreneur;
 import acme.entities.roles.Investor;
@@ -19,6 +20,7 @@ import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Principal;
+
 import acme.framework.services.AbstractCreateService;
 
 @Service
@@ -69,10 +71,19 @@ public class InvestorApplicationCreateService implements AbstractCreateService<I
 		assert entity != null;
 		assert model != null;
 
-		model.setAttribute("investId", entity.getInvestmentRound().getId());
+		int investId = entity.getInvestmentRound().getId();
+		model.setAttribute("investId", investId);
+		Boolean res = false;
+		
+		//Comprobar si tiene oferta pueda ponerle los campos text, password, link
+		Dormit c = this.repository.findOneDormitIdByInvestmentRoundId(investId);
 
+		if (c != null) {
+			res = true;
+		}
+		model.setAttribute("hasDormit", res);
 		request.unbind(entity, model, "ticker", "moment");
-		request.unbind(entity, model, "statement", "status", "moneyOffer", "investmentRound.ticker");
+		request.unbind(entity, model, "statement", "status", "moneyOffer", "investmentRound.ticker", "password", "linkInfo");
 	}
 
 	@Override
@@ -145,8 +156,34 @@ public class InvestorApplicationCreateService implements AbstractCreateService<I
 		if (!errors.hasErrors("moneyOffer")) {
 			errors.state(request, entity.getMoneyOffer().getCurrency().equals("EUR") || entity.getMoneyOffer().getCurrency().equals("€"), "moneyOffer", "investor.application.form.error.dineroIncorrecto");
 		}
-
-	}
+		
+		//Contraseña incorrecta
+//		int investmentRoundId = request.getModel().getInteger("investmentRoundId");
+//		Integer requestId = this.repository.findOneRequestIdByInvestmentRoundId(investmentRoundId);
+//		if (requestId != null) {
+//			if (!StringHelper.isBlank(entity.getColemAnswer())) {
+//				if (!StringHelper.isBlank(entity.getLink())) {
+//					if (!StringHelper.isBlank(entity.getPassword()) && !errors.hasErrors("password")) {
+//						errors.state(request, WorkerApplicationCreateService.checkPassword(entity.getPassword()), "password", "worker.application.form.error.invalid-password");
+//					}
+//				} else {
+//					errors.state(request, StringHelper.isBlank(entity.getPassword()), "password", "worker.application.form.error.needs-track-id");
+//				}
+//			} else {
+//				errors.state(request, StringHelper.isBlank(entity.getTrackId()), "trackId", "worker.application.form.error.needs-colem-answer");
+//				errors.state(request, StringHelper.isBlank(entity.getPassword()), "password", "worker.application.form.error.needs-colem-answer");
+//			}
+//		}
+		
+//	//Comprueba que si la contraseña es una url
+//	boolean assertUrlPassword;
+//	if (entity.getPassword() != "") {
+//		assertUrlPassword = entity.getTracker() != "";
+//		errors.state(request, assertUrlPassword, "password", "worker.application.error.password");
+//
+//		}
+//
+}
 
 	@Override
 	public void create(final Request<Application> request, final Application entity) {

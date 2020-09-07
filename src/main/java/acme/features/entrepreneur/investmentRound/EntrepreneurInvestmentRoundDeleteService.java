@@ -62,7 +62,7 @@ public class EntrepreneurInvestmentRoundDeleteService implements AbstractDeleteS
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "ticker", "moment", "kindRound", "title", "description", "amountMoney", "link", "finalMode");
+		request.unbind(entity, model, "ticker", "moment", "kindRound", "title", "description", "amountMoney", "link", "finalMode", "requestCC.id");
 	}
 
 	@Override
@@ -121,8 +121,6 @@ public class EntrepreneurInvestmentRoundDeleteService implements AbstractDeleteS
 		Collection<AccountingRecord> accountingRecords = this.repository.findAccountingRecordsByInvestmentRoundId(entity.getId());
 		if (!accountingRecords.isEmpty()) {
 			for (AccountingRecord ar : accountingRecords) {
-				// Puede que tengas que llamar al repositorio de accounting record cuando
-				// se mergee que aun no se ha mergeado porque no sabemos si Sara ha terminado
 				this.workProgrammeRepository.delete(ar);
 			}
 		}

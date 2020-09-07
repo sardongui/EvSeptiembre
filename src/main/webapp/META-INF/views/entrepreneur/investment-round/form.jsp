@@ -11,6 +11,9 @@
 	<acme:form-textarea code="entrepreneur.investmentRound.form.label.description" path="description" />
 	<acme:form-money code="entrepreneur.investmentRound.form.label.amountMoney" path="amountMoney" />
 	<acme:form-url code="entrepreneur.investmentRound.form.label.link" path="link" />
+	<jstl:if test="${command != 'create'and hasDormit}">
+		<acme:form-textbox code="entrepreneur.dormit.form.label.text" path="dormit.text" readonly="true" />
+	</jstl:if>
 	<jstl:if test="${command != 'create'}">
 		<acme:form-textbox code="entrepreneur.investmentRound.form.label.finalMode" path="finalMode" readonly="true" />
 	</jstl:if>
@@ -28,6 +31,10 @@
 		<acme:form-return code="entrepreneur.work-programme.form.button.create-workProgramme"
 			action="/entrepreneur/work-programme/create?investmentRoundId=${id}" />
 	</jstl:if>
+	<jstl:if test="${command!='create' and not hasDormit and finalMode == false}">
+	<acme:form-return code="entrepreneur.dormit.form.button.create-dormit" action="/entrepreneur/dormit/create?investmentRoundId=${id}"/>
+	</jstl:if>
+	
 
 	<acme:form-submit test="${command == 'show' && finalMode == false}" code="entrepreneur.investment-round.form.button.update"
 		action="/entrepreneur/investment-round/update" />

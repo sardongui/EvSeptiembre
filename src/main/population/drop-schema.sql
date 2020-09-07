@@ -55,6 +55,10 @@
        drop 
        foreign key `FKt4r2xk2tub96vxanpfvkfitmc`;
 
+    alter table `dormit` 
+       drop 
+       foreign key `FK67c3f7g9dv0sxvy5d2e7kt7au`;
+
     alter table `entrepreneur` 
        drop 
        foreign key FK_r6tqltqvrlh1cyy8rsj5pev1q;
@@ -116,6 +120,8 @@
     drop table if exists `customisation`;
 
     drop table if exists `donaire_bulletin`;
+
+    drop table if exists `dormit`;
 
     drop table if exists `entrepreneur`;
 

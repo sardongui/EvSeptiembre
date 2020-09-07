@@ -42,7 +42,14 @@ public class EntrepreneurInvestmentRoundShowService implements AbstractShowServi
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-
+//		model.setAttribute("hasDormit", !(entity.getDormit()==null));
+//		
+//		if(entity.getDormit()!=null) {
+//			model.setAttribute("dormit", entity.getDormit().getId());
+//			request.unbind(entity, model, "dormit.text");
+//			request.unbind(entity, model, "ticker", "moment", "kindRound", "title", "description", "amountMoney", "link", "finalMode");
+//			
+//		}
 		request.unbind(entity, model, "ticker", "moment", "kindRound", "title", "description", "amountMoney", "link", "finalMode");
 	}
 

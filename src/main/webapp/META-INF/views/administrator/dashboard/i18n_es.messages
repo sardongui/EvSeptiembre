@@ -16,4 +16,8 @@ administrator.dashboard.form.label.averageInvestmentRoundsPerEntrepreneur = Medi
 administrator.dashboard.form.label.averageApplicationsPerEntrepreneur = Media de Solicitudes por Emprendedor:
 administrator.dashboard.form.label.averageApplicationsPerInvestor = Media de Solicitudes por Inversor:
 
+administrator.dashboard.form.label.ratioInvestmentRoundHaveDormit = Ratio de Rondas de Inversión que tienen un dormit:
+administrator.dashboard.form.label.ratioApplicationIncludeLink = Ratio de Aplicaciones que tienen link:
+administrator.dashboard.form.label.ratioApplicationIncludePassword = Ratio de Aplicaciones que tienen contraseña:
+
 administrator.dashboard.form.button.return = Volver

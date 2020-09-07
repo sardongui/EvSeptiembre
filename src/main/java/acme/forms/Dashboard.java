@@ -42,5 +42,10 @@ public class Dashboard implements Serializable {
 	Double						averageApplicationsPerEntrepreneur;
 
 	Double						averageApplicationsPerInvestor;
+	
+	//CC Septiembre
+	Double ratioInvestmentRoundHaveDormit;
+	Double ratioApplicationIncludeLink;
+	Double ratioApplicationIncludePassword;
 
 }

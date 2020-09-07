@@ -60,7 +60,7 @@ public class EntrepreneurApplicationUpdateService implements AbstractUpdateServi
 		String InvestmentRoundEntrepreneur = entity.getInvestmentRound().getEntrepreneur().getUserAccount().getUsername();
 		model.setAttribute("InvestmentRoundEntrepreneur", InvestmentRoundEntrepreneur);
 
-		request.unbind(entity, model, "ticker", "moment", "status", "statement", "moneyOffer", "rejectionJustification");
+		request.unbind(entity, model, "ticker", "moment", "status", "statement", "moneyOffer", "rejectionJustification", "linkInfo", "password");
 
 	}
 

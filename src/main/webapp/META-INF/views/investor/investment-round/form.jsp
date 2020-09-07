@@ -12,10 +12,11 @@
 	<acme:form-url code="investor.investmentRound.form.label.amountMoney" path="amountMoney"/>
 	<acme:form-url code="investor.investmentRound.form.label.link" path="link"/>
 	
-	
+
 	<!--<acme:form-submit test="${app == null}" code="investor.application.create"
 		action="/investor/application/create?investId=${id}" />  -->
-	
+	<acme:form-submit code="investor.investmentRound.form.button.show-dormit"
+		action="/investor/dormit/show?dormitId=${id}" method="get" />
 	<jstl:if test="${cantidadApplications == 0}">
 		<acme:form-return code="investor.application.create" action="/investor/application/create?investId=${id}"/>
 	</jstl:if>

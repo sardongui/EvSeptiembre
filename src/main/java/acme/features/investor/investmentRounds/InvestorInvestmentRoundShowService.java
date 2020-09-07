@@ -5,9 +5,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.applications.Application;
+import acme.entities.dormits.Dormit;
 import acme.entities.investmentRounds.InvestmentRound;
 import acme.entities.roles.Investor;
 import acme.features.investor.application.InvestorApplicationRepository;
+import acme.features.investor.dormit.InvestorDormitRepository;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Principal;
@@ -21,6 +23,9 @@ public class InvestorInvestmentRoundShowService implements AbstractShowService<I
 
 	@Autowired
 	InvestorApplicationRepository		appRepository;
+	
+	@Autowired
+	InvestorDormitRepository dormitRepository;
 
 
 	@Override
@@ -60,6 +65,11 @@ public class InvestorInvestmentRoundShowService implements AbstractShowService<I
 		model.setAttribute("cantidadApplications", cantidadApplications);
 
 		request.getModel().setAttribute("app", app);
+		
+		//Dormit d = this.dormitRepository.findDormitByInvestmentRoundId(investmentId);
+		//if(d!=null) {
+		//	model.setAttribute("dormit", d);
+		//}
 
 		request.unbind(entity, model, "ticker", "moment", "kindRound", "title", "description", "amountMoney", "link");
 	}

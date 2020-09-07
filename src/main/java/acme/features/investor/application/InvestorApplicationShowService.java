@@ -43,8 +43,11 @@ public class InvestorApplicationShowService implements AbstractShowService<Inves
 		assert entity != null;
 		assert model != null;
 
+		int investId = entity.getInvestmentRound().getId();
+		model.setAttribute("investId", investId);
+		model.setAttribute("requestId", this.repository.findOneDormitIdByInvestmentRoundId(investId));
 		request.unbind(entity, model, "ticker", "moment");
-		request.unbind(entity, model, "statement", "status", "moneyOffer", "investmentRound.ticker", "rejectionJustification");
+		request.unbind(entity, model, "statement", "status", "moneyOffer", "investmentRound.ticker", "password", "linkInfo");
 	}
 
 	@Override

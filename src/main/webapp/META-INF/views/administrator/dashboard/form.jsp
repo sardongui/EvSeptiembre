@@ -22,5 +22,9 @@
     <acme:form-textbox code="administrator.dashboard.form.label.averageApplicationsPerEntrepreneur" path="averageApplicationsPerEntrepreneur" />
     <acme:form-textbox code="administrator.dashboard.form.label.averageApplicationsPerInvestor" path="averageApplicationsPerInvestor" />
     
+    <acme:form-textbox code="administrator.dashboard.form.label.ratioInvestmentRoundHaveDormit" path="ratioInvestmentRoundHaveDormit" /> 
+    <acme:form-textbox code="administrator.dashboard.form.label.ratioApplicationIncludeLink" path="ratioApplicationIncludeLink" />
+    <acme:form-textbox code="administrator.dashboard.form.label.ratioApplicationIncludePassword" path="ratioApplicationIncludePassword" />
+    
     <acme:form-return code="administrator.dashboard.form.button.return" />
 </acme:form>

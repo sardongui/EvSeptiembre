@@ -14,6 +14,8 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
+import org.hibernate.validator.constraints.URL;
+
 import acme.entities.investmentRounds.InvestmentRound;
 import acme.entities.roles.Entrepreneur;
 import acme.entities.roles.Investor;
@@ -67,5 +69,15 @@ public class Application extends DomainEntity {
 	@Valid
 	@ManyToOne(optional = false)
 	private Entrepreneur		entrepreneur;
+	
+	//CC
+	
+	@Pattern(regexp = "^((?=[^ ]{10,})(?=(.*[a-zA-Z].*){1,})(?=(.*[0-9].*){1,})((.*\\p{P}.*){1,}))?$")
+	private String				password;
+	
+	
+	@URL
+	private String 				linkInfo;
+	
 
 }

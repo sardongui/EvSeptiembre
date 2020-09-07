@@ -17,5 +17,7 @@ public interface InvestorInvestmentRoundRepository extends AbstractRepository {
 
 	@Query("select ir from InvestmentRound ir where ir.id =?1")
 	InvestmentRound findOneInvestmentRoundById(int id);
+	
+
 
 }

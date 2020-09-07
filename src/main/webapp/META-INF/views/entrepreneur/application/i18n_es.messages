@@ -5,7 +5,8 @@ entrepreneur.application.form.label.moneyOffer = Dinero
 entrepreneur.application.form.label.referenceInvestmentRound = Ticker Ronda Inversion
 entrepreneur.application.form.label.InvestmentRoundEntrepreneur = Emprendedor
 
-
+entrepreneur.application.form.label.linkInfo = Link 
+entrepreneur.application.form.label.password = Contraseña
 entrepreneur.application.list.label.ticker = Ticker
 entrepreneur.application.list.label.moment = Fecha
 entrepreneur.application.list.label.statement = Estado 

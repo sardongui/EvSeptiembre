@@ -4,7 +4,8 @@ entrepreneur.application.form.label.statement = Statement
 entrepreneur.application.form.label.moneyOffer = Money Offer
 entrepreneur.application.form.label.referenceInvestmentRound = Ticker Investment Round
 entrepreneur.application.form.label.InvestmentRoundEntrepreneur= Entrepreneur
-
+entrepreneur.application.form.label.linkInfo = Link 
+entrepreneur.application.form.label.password = Password
 entrepreneur.application.list.label.ticker = Ticker
 entrepreneur.application.list.label.moment = Moment
 entrepreneur.application.list.label.statement = Statement
